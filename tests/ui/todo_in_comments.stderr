@@ -1,0 +1,70 @@
+error: TODO found in comment
+  --> tests/ui/todo_in_comments.rs:1:1
+   |
+LL | // todo 0
+   | ^^^^^^^^^
+   |
+   = note: `-D clippy::todo-in-comments` implied by `-D warnings`
+   = help: to override `-D warnings` add `#[allow(clippy::todo_in_comments)]`
+
+error: TODO found in comment
+  --> tests/ui/todo_in_comments.rs:4:1
+   |
+LL | // TODO: 1
+   | ^^^^^^^^^^
+
+error: TODO found in comment
+  --> tests/ui/todo_in_comments.rs:8:1
+   |
+LL | / /*
+LL | | TODO: 2
+   | | ^^^^
+LL | |  */
+   | |___^
+
+error: TODO found in comment
+  --> tests/ui/todo_in_comments.rs:12:5
+   |
+LL |     // TODO: 3
+   |     ^^^^^^^^^^
+
+error: TODO found in comment
+  --> tests/ui/todo_in_comments.rs:13:5
+   |
+LL | /     /*
+LL | |     TODO: 4
+   | |     ^^^^
+LL | |      */
+   | |_______^
+
+error: TODO found in comment
+  --> tests/ui/todo_in_comments.rs:18:1
+   |
+LL | // TODO: 5
+   | ^^^^^^^^^^
+
+error: TODO found in comment
+  --> tests/ui/todo_in_comments.rs:20:1
+   |
+LL | / /*
+LL | | TODO: multi
+   | | ^^^^
+LL | | line
+LL | | comment
+LL | | containing
+LL | | todo
+   | | ^^^^
+LL | |  */
+   | |___^
+
+error: TODO found in comment
+  --> tests/ui/todo_in_comments.rs:28:1
+   |
+LL | / /*
+LL | |  * TODO
+   | |    ^^^^
+LL | |  */
+   | |___^
+
+error: aborting due to 8 previous errors
+

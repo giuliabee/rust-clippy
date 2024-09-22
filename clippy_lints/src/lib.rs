@@ -349,6 +349,7 @@ mod temporary_assignment;
 mod tests_outside_test_module;
 mod to_digit_is_some;
 mod to_string_trait_impl;
+mod todo_in_comments;
 mod trailing_empty_array;
 mod trait_bounds;
 mod transmute;
@@ -943,6 +944,7 @@ pub fn register_lints(store: &mut rustc_lint::LintStore, conf: &'static Conf) {
     store.register_late_pass(move |_| Box::new(manual_div_ceil::ManualDivCeil::new(conf)));
     store.register_late_pass(|_| Box::new(manual_is_power_of_two::ManualIsPowerOfTwo));
     store.register_late_pass(|_| Box::new(non_zero_suggestions::NonZeroSuggestions));
+    store.register_early_pass(|| Box::new(todo_in_comments::TodoInComments));
     store.register_late_pass(move |_| Box::new(unused_trait_names::UnusedTraitNames::new(conf)));
     // add lints here, do not remove this comment, it's used in `new_lint`
 }
